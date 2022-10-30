@@ -66,6 +66,12 @@ const pageTitle = `${title} | Dylan Fontaine`;
       'selection:bg-green-300',
     ]}
   >
+    <script>
+      import reportWebVitals from '@/reportWebVitals';
+      import { sendToVercelAnalytics } from '@/vitals';
+      reportWebVitals(sendToVercelAnalytics);
+    </script>
+
     <Header />
     <main class:list={['p-5', 'flex-1']}>
       <slot />

@@ -2,13 +2,19 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/tailwind': ^2.1.1
+  '@types/node': ^18.11.8
   astro: ^1.6.0
   tailwindcss: ^3.0.24
+  web-vitals: ^3.0.4
 
 dependencies:
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.1
   astro: 1.6.1
   tailwindcss: 3.2.1
+  web-vitals: 3.0.4
+
+devDependencies:
+  '@types/node': 18.11.8
 
 packages:
 
@@ -585,6 +591,10 @@ packages:
     dependencies:
       '@types/unist': 2.0.6
     dev: false
+
+  /@types/node/18.11.8:
+    resolution: {integrity: sha512-uGwPWlE0Hj972KkHtCDVwZ8O39GmyjfMane1Z3GUBGGnkZ2USDq7SxLpVIiIHpweY9DS0QTDH0Nw7RNBsAAZ5A==}
+    dev: true
 
   /@types/parse5/6.0.3:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
@@ -3779,6 +3789,10 @@ packages:
   /web-streams-polyfill/3.2.1:
     resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
     engines: {node: '>= 8'}
+    dev: false
+
+  /web-vitals/3.0.4:
+    resolution: {integrity: sha512-Yau8qf1AJ/dm6MY180Bi0qpCIuWmAfKAnOqmxLecGfIHn0+ND3H4JOhXeY73Pyi9zjSF5J4SNUewHLNUzU7mmA==}
     dev: false
 
   /which-pm-runs/1.1.0:
