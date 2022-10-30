@@ -25,8 +25,10 @@ const { href, title, tags = [] } = Astro.props;
   ]}
 >
   <article class:list={['mx-auto', 'p-3', 'w-full', 'relative']}>
-    <a class="absolute cursor-pointer top-0 bottom-0 right-0 left-0" href={href}
-    ></a>
+    <a
+      class="absolute cursor-pointer top-0 bottom-0 right-0 left-0"
+      href={href}
+      aria-label={`${title} Card`}></a>
     <h3 class="text-subheading text-xl">
       {title}
       <span>&rarr;</span>

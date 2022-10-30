@@ -9,6 +9,6 @@ const { icon, class: className, href } = Astro.props;
 const { default: Component } = await import(`./icons/${icon}.astro`);
 ---
 
-<a href={href} target="_blank">
+<a href={href} target="_blank" aria-label={`Visit my ${icon}`}>
   <Component class={className} />
 </a>
