@@ -8,6 +8,8 @@ export interface Props {
 }
 
 const { title, description } = Astro.props;
+const canonicalUrl = `https://dylf.dev${Astro.url.pathname}`;
+const pageTitle = `${title} | Dylan Fontaine`;
 ---
 
 <!DOCTYPE html>
@@ -17,17 +19,17 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="robots" content="follow, index" />
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dylan Fontaine" />
     <meta property="og:image" content="https://dylf.dev/profile.jpeg" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ShallowClone" />
-    <link rel="canonical" href={Astro.url} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
