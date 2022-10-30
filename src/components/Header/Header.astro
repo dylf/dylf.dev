@@ -1,0 +1,32 @@
+---
+import Icon from '@/components/Icon.astro';
+import NavLink from './NavLink.astro';
+---
+
+<header class="flex p-5 justify-between items-baseline my-5">
+  <nav>
+    <ul class="flex text-xl uppercase font-light">
+      <NavLink href="/">Home</NavLink>
+      <NavLink href="/blog">Blog</NavLink>
+      <NavLink href="/projects">Projects</NavLink>
+      <NavLink href="/about">About</NavLink>
+    </ul>
+  </nav>
+  <div class="flex">
+    <Icon
+      icon="GitHub"
+      class="stroke-2 stroke-gray-400 fill-none w-6 mx-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
+      href="https://www.github.com/dylf"
+    />
+    <Icon
+      icon="Twitter"
+      class="stroke-2 stroke-gray-400 fill-none w-6 mx-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
+      href="https://www.twitter.com/ShallowClone"
+    />
+    <Icon
+      icon="LinkedIn"
+      class="stroke-2 stroke-gray-400 fill-none w-6 ml-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
+      href="https://www.linkedin.com/in/dylan-fontaine/"
+    />
+  </div>
+</header>

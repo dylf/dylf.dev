@@ -1,0 +1,79 @@
+---
+export interface Props {
+  title: string;
+  href: string;
+  tags?: string[];
+}
+
+const { href, title, tags = [] } = Astro.props;
+---
+
+<li
+  class:list={[
+    'mb-4',
+    'flex',
+    'hover:animate-gradient-xy',
+    'hover:bg-gradient-to-tr',
+    'to-cyan-500',
+    'via-purple-900',
+    'from-black',
+    'rounded-xl',
+    'duration-200',
+    'hover:bg-opacity-0',
+    'bg-black',
+    'bg-opacity-40',
+  ]}
+>
+  <article class:list={['mx-auto', 'p-3', 'w-full', 'relative']}>
+    <a class="absolute cursor-pointer top-0 bottom-0 right-0 left-0" href={href}
+    ></a>
+    <h3 class="text-subheading text-xl">
+      {title}
+      <span>&rarr;</span>
+    </h3>
+    {
+      tags.length === 0 ? null : (
+        <div class="relative mt-2 mb-1 inline-block">
+          {tags.map((tag) => (
+            <a
+              href={`/blog?tags=${tag}`}
+              class:list={[
+                'cursor-pointer',
+                'z-10',
+                'lowercase',
+                'rounded-2xl',
+                'border',
+                'py-1',
+                'px-3',
+                'mr-2',
+                'my-1',
+                'hover:bg-cyan-400',
+                'hover:text-black',
+                'ease-in',
+                'duration-100',
+                'inline-block',
+              ]}
+            >
+              #{tag}
+            </a>
+          ))}
+        </div>
+      )
+    }
+    <div class="flex mt-2">
+      <p class="basis-3/4 text-gray-300">
+        <slot />
+      </p>
+      <span
+        class:list={[
+          'basis-1/4',
+          'text-xs',
+          'text-right',
+          'uppercase',
+          'flex-end',
+          'self-end',
+        ]}>October 20, 2030</span
+      >
+    </div>
+  </article>
+</li>

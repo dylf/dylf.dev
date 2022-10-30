@@ -1,0 +1,56 @@
+---
+import Footer from '@/components/Footer/Footer.astro';
+import Header from '@/components/Header/Header.astro';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Signika:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orienta&family=Work+Sans:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://css.gg/add-r.css" rel="stylesheet" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body
+    class:list={[
+      'bg-custom-purple',
+      'text-white',
+      'container',
+      'mx-auto',
+      'bg-gradient-to-t',
+      'from-black',
+      'to-custom-purple',
+      'min-h-screen',
+      'flex-col',
+      'flex',
+      'my-0',
+      'py-0',
+      'selection:text-black',
+      'selection:bg-green-300',
+    ]}
+  >
+    <Header />
+    <main class:list={['p-5', 'flex-1']}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,35 @@
+---
+import Card from './FeaturedCard.astro';
+---
+
+<section id="featured-posts" class="mb-20">
+  <h2 class="text-3xl font-headline mb-4">Featured Posts</h2>
+  <ul class="mb-6">
+    <Card href="#" title="How I Built My Blog Site Using Astro">
+      This is not a real blog post. None of this is real.
+    </Card>
+
+    <Card
+      href="#"
+      title="I Figured Out CSS With Tailwind"
+      tags={['css', 'frontend', 'tailwind']}
+    >
+      Here is where I would put a short description of my blog post.
+    </Card>
+  </ul>
+  <a
+    href="/blog"
+    class:list={[
+      'hover:text-cyan-300',
+      'font-light',
+      'hover:underline',
+      'ease-in',
+      'duration-100',
+      'text-lg',
+      'float-right',
+    ]}
+  >
+    More posts
+    <span class="text-xl">&rarr;</span>
+  </a>
+</section>

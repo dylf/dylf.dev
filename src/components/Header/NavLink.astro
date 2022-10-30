@@ -1,0 +1,20 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+const activeClass =
+  Astro.url.pathname == href ? 'text-active-highlight scale-110' : '';
+---
+
+<li
+  class:list={[
+    'mr-10 hover:scale-110 ease-in duration-100 hover:text-cyan-400',
+    activeClass,
+  ]}
+>
+  <a href={href}>
+    <slot />
+  </a>
+</li>

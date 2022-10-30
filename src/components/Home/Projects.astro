@@ -1,0 +1,46 @@
+---
+import Card from './ProjectCard.astro';
+---
+
+<section id="featured-posts" class="mb-20">
+  <h2 class="text-3xl font-headline mb-4">Things I'm Working On</h2>
+  <ul class="mb-6 grid grid-cols-3 gap-4">
+    <Card href="#" title="Cool Astro Project" tags={['astro', 'typescript']}>
+      This is not a real project. None of this is real.
+    </Card>
+
+    <Card href="#" title="Another Neat Thing" tags={['css']}>
+      Here is where I would put a short description of my blog post.
+    </Card>
+
+    <Card href="#" title="I just saw other cats" tags={['cat-ipsum']}>
+      Ask to be pet then attack owners hand. Walk on a keyboard mouse cats are
+      cute. Bite the neighbor's bratty kid swat at dog.
+    </Card>
+
+    <Card
+      href="#"
+      title="Another Cat Ipsum"
+      tags={['mouse-dismemberment', 'foo', 'fee', 'foo']}
+    >
+      Dismember a mouse and then regurgitate parts of it on the family room
+      floor the fat cat sat on the mat bat away with paws when owners are
+      asleep, cry for no apparent reason.
+    </Card>
+  </ul>
+  <a
+    href="/projects"
+    class:list={[
+      'hover:text-cyan-300',
+      'font-light',
+      'hover:underline',
+      'ease-in',
+      'duration-100',
+      'text-lg',
+      'float-right',
+    ]}
+  >
+    More projects
+    <span class="text-xl">&rarr;</span>
+  </a>
+</section>
