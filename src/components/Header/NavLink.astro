@@ -1,11 +1,11 @@
 ---
 interface Props {
   href: string;
+  active?: boolean;
 }
 
-const { href } = Astro.props;
-const activeClass =
-  Astro.url.pathname == href ? 'text-active-highlight scale-110' : '';
+const { href, active = false } = Astro.props;
+const activeClass = active ? 'text-active-highlight scale-110' : '';
 ---
 
 <li
