@@ -1,7 +1,4 @@
 ---
-import { inject } from '@vercel/analytics';
-inject();
-
 import Footer from '@/components/Footer/Footer.astro';
 import Header from '@/components/Header/Header.astro';
 
@@ -74,7 +71,11 @@ const pageTitle = `${title} | Dylan Fontaine`;
       import { sendToVercelAnalytics } from '@/vitals';
       reportWebVitals(sendToVercelAnalytics);
     </script>
-    <script async src="/va/script.js"></script>
+
+    <script>
+      import { inject } from '@vercel/analytics';
+      inject();
+    </script>
 
     <Header />
     <main class:list={['p-5', 'flex-1']}>
