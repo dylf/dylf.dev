@@ -3,16 +3,16 @@ import Icon from '@/components/Icon.astro';
 import NavLink from './NavLink.astro';
 ---
 
-<header class="flex flex-wrap p-5 justify-between items-baseline max-w-[100vw]">
-  <nav class="my-5">
-    <ul class="flex text-xl uppercase font-light">
+<header class="flex flex-wrap p-5 justify-between items-baseline">
+  <nav class="my-5 basis-full md:basis-1/2">
+    <ul class="flex text-xl uppercase font-light justify-between">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/blog">Blog</NavLink>
       <NavLink href="/projects">Projects</NavLink>
       <NavLink href="/about">About</NavLink>
     </ul>
   </nav>
-  <div class="hidden sm:flex">
+  <div class="hidden md:flex">
     <Icon
       icon="GitHub"
       class="stroke-2 stroke-gray-400 fill-none w-6 mx-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
