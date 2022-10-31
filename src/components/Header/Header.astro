@@ -3,8 +3,8 @@ import Icon from '@/components/Icon.astro';
 import NavLink from './NavLink.astro';
 ---
 
-<header class="flex p-5 justify-between items-baseline my-5">
-  <nav>
+<header class="flex flex-wrap p-5 justify-between items-baseline max-w-[100vw]">
+  <nav class="my-5">
     <ul class="flex text-xl uppercase font-light">
       <NavLink href="/">Home</NavLink>
       <NavLink href="/blog">Blog</NavLink>
@@ -12,7 +12,7 @@ import NavLink from './NavLink.astro';
       <NavLink href="/about">About</NavLink>
     </ul>
   </nav>
-  <div class="flex">
+  <div class="hidden sm:flex">
     <Icon
       icon="GitHub"
       class="stroke-2 stroke-gray-400 fill-none w-6 mx-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"

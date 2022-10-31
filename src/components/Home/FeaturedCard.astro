@@ -10,6 +10,8 @@ const { href, title, tags = [] } = Astro.props;
 
 <li
   class:list={[
+    'p-5',
+    'lg:p-2',
     'mb-4',
     'flex',
     'hover:animate-gradient-xy',
@@ -62,8 +64,8 @@ const { href, title, tags = [] } = Astro.props;
         </div>
       )
     }
-    <div class="flex mt-2">
-      <p class="basis-3/4 text-gray-300">
+    <div class="flex mt-2 text-gray-300">
+      <p class="basis-3/4">
         <slot />
       </p>
       <span
