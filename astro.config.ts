@@ -1,8 +1,6 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
-// https://astro.build/config
-/** @type {import('astro/config').AstroUserConfig} */
 export default defineConfig({
   integrations: [tailwind()],
   vite: {
