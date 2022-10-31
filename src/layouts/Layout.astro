@@ -72,11 +72,6 @@ const pageTitle = `${title} | Dylan Fontaine`;
       reportWebVitals(sendToVercelAnalytics);
     </script>
 
-    <script>
-      import inject from '@/analytics';
-      inject();
-    </script>
-
     <Header />
     <main class:list={['p-5', 'flex-1']}>
       <slot />
