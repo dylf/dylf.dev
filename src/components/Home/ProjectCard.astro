@@ -27,6 +27,7 @@ const { href, title, tags = [] } = Astro.props;
 >
   <div class:list={['mx-auto', 'p-3', 'w-full', 'relative']}>
     <a
+      rel="prefetch"
       class="absolute cursor-pointer top-0 bottom-0 right-0 left-0"
       href={href}
       aria-label={`${title} Card`}></a>
@@ -38,6 +39,7 @@ const { href, title, tags = [] } = Astro.props;
         <div class="relative mt-2 mb-1 inline-block">
           {tags.map((tag) => (
             <a
+              rel="prefetch"
               href={`/projects?tags=${tag}`}
               class:list={[
                 'cursor-pointer',
