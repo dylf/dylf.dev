@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const { title, description, path } = Astro.props;
-const canonicalUrl = `https://dylf.dev${Astro.url.pathname}`;
+const canonicalUrl = `https://www.dylf.dev${Astro.url.pathname}`;
 const pageTitle = `${title} | Dylan Fontaine`;
 ---
 
@@ -26,7 +26,7 @@ const pageTitle = `${title} | Dylan Fontaine`;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dylan Fontaine" />
-    <meta property="og:image" content="https://dylf.dev/dylf-summary.png" />
+    <meta property="og:image" content="https://www.dylf.dev/dylf-summary.png" />
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ShallowClone" />
