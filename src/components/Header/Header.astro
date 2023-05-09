@@ -1,6 +1,6 @@
 ---
-import Icon from '@/components/Icon.astro';
-import NavLink from './NavLink.astro';
+import Icon from "@/components/Icon.astro";
+import NavLink from "./NavLink.astro";
 
 interface Props {
   currentPath: string;
@@ -10,32 +10,32 @@ const { currentPath } = Astro.props;
 ---
 
 <header
-  class="z-40 flex flex-wrap p-4 justify-between items-baseline sticky top-0 backdrop-blur border-b border-gray-400"
+  class="sticky top-0 z-40 flex flex-wrap items-baseline justify-between border-b border-gray-400 p-4 backdrop-blur"
 >
   <nav class="my-1 basis-full md:basis-1/2 lg:basis-5/12 xl:basis-1/3">
-    <ul class="flex text-xl uppercase font-light justify-between">
-      <NavLink href="/" active={'/' === currentPath}>Home</NavLink>
-      <NavLink href="/blog" active={'/blog' === currentPath}>Blog</NavLink>
-      <NavLink href="/projects" active={'/projects' === currentPath}
-        >Projects</NavLink
-      >
-      <NavLink href="/about" active={'/about' === currentPath}>About</NavLink>
+    <ul class="flex justify-between text-xl font-light uppercase">
+      <NavLink href="/" active={"/" === currentPath}>Home</NavLink>
+      <!-- <NavLink href="/blog" active={'/blog' === currentPath}>Blog</NavLink> -->
+      <NavLink href="/projects" active={"/projects" === currentPath}>
+        Projects
+      </NavLink>
+      <NavLink href="/about" active={"/about" === currentPath}>About</NavLink>
     </ul>
   </nav>
   <div class="hidden md:flex">
     <Icon
       icon="GitHub"
-      class="stroke-2 stroke-gray-400 fill-none w-6 mx-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
+      class="mx-2 w-6 fill-none stroke-gray-400 stroke-2 duration-100 ease-in hover:scale-110 hover:stroke-cyan-400"
       href="https://www.github.com/dylf"
     />
     <Icon
       icon="Twitter"
-      class="stroke-2 stroke-gray-400 fill-none w-6 mx-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
+      class="mx-2 w-6 fill-none stroke-gray-400 stroke-2 duration-100 ease-in hover:scale-110 hover:stroke-cyan-400"
       href="https://www.twitter.com/ShallowClone"
     />
     <Icon
       icon="LinkedIn"
-      class="stroke-2 stroke-gray-400 fill-none w-6 ml-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
+      class="ml-2 w-6 fill-none stroke-gray-400 stroke-2 duration-100 ease-in hover:scale-110 hover:stroke-cyan-400"
       href="https://www.linkedin.com/in/dylan-fontaine/"
     />
   </div>

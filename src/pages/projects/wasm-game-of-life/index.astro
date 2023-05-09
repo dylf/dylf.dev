@@ -1,28 +1,39 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/Link.astro";
 ---
 
 <Layout title="Projects" description="Things that I'm making" path="/projects">
-  <h2 class="text-3xl font-headline mb-4">WASM Game of Life</h2>
+  <h2 class="mb-4 font-headline text-3xl">WASM Game of Life</h2>
   <p class="text-md mb-4">
     This is a simple implementation of Conway's Game of Life using Rust and
     WebAssembly.
   </p>
-  <canvas class="mx-auto mb-2" id="game-of-life-canvas"></canvas>
-  <div class="controls grid grid-cols-3">
+  <p class="mb-6">
+    Check out the
+    <Link href="https://github.com/dylf/wasm-game-of-life">
+      source code on Github
+    </Link>
+  </p>
+  <canvas class="mx-auto mb-4" id="game-of-life-canvas"></canvas>
+  <div class="controls mb-7 grid grid-cols-4">
     <button
-      class="text-lg px-8 bg-green-600 rounded-sm hover:bg-green-900 mx-2"
+      class="mx-2 rounded-xl bg-green-600 px-8 text-lg hover:bg-green-900"
       id="play-pause">⏸</button
     >
-    <button
-      class="text-lg px-8 rounded-sm bg-orange-500 mx-2"
-      id="reset-universe">Reset Universe</button
+    <button class="mx-2 rounded-xl bg-red-600" id="reset-universe"
+      >Clear Universe</button
     >
-    <button class="text-lg px-8 rounded-sm bg-orange-500 mx-2" id="randomize">
+    <button class="text-md mx-2 rounded-xl bg-orange-600" id="randomize">
       Randomize
     </button>
+    <button class="text-md mx-2 rounded-xl bg-pink-500 px-8" id="toggle-debug">
+      Debug Logging
+    </button>
+  </div>
+  <div class="mx-auto text-center">
     <input
-      class="ring-offset-orange-300 accent-cyan-500 px-5 mx-5"
+      class="mx-5 px-5 accent-cyan-500 ring-offset-orange-300"
       id="ticks-per-frame"
       type="range"
       min="1"
@@ -37,28 +48,22 @@ import Layout from "@/layouts/Layout.astro";
       <option value="4"></option>
       <option value="5"></option>
     </datalist>
-    <button
-      class="text-lg px-8 rounded-sm bg-orange-500 mx-2"
-      id="toggle-debug"
-    >
-      Toggle Debug
-    </button>
   </div>
   <div class="mb-4 h-9" id="fps"></div>
-  <div class="mb-4 h-9 grid grid-cols-4 gap-4" id="generation">
-    <div class="bg-gray-800 rounded-lg text-center">
+  <div class="mb-4 grid h-9 grid-cols-4 gap-4" id="generation">
+    <div class="rounded-lg bg-gray-800 text-center">
       <div>FPS</div>
       <div id="fps-value">50</div>
     </div>
-    <div class="bg-gray-800 rounded-lg text-center">
+    <div class="rounded-lg bg-gray-800 text-center">
       <div>Avg FPS</div>
       <div id="avg-fps-value">50</div>
     </div>
-    <div class="bg-gray-800 rounded-lg text-center">
+    <div class="rounded-lg bg-gray-800 text-center">
       <div>Min FPS</div>
       <div id="min-fps-value">50</div>
     </div>
-    <div class="bg-gray-800 rounded-lg text-center">
+    <div class="rounded-lg bg-gray-800 text-center">
       <div>Max FPS</div>
       <div id="max-fps-value">50</div>
     </div>

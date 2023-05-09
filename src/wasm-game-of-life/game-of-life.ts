@@ -2,7 +2,7 @@ import { Universe } from "@dylf/wasm-game-of-life";
 // @ts-expect-error - wasm-pack doesn't export memory
 import { memory } from "@dylf/wasm-game-of-life/wasm_game_of_life_bg.wasm";
 
-const CELL_SIZE = 8; // px
+const CELL_SIZE = 6; // px
 const GRID_COLOR = "#333";
 const ALIVE_COLOR = "cyan";
 const DEAD_COLOR = "#222";
@@ -13,7 +13,9 @@ const width = universe.width();
 const height = universe.height();
 
 // Draw the canvas
-const canvas = document.getElementById("game-of-life-canvas") as HTMLCanvasElement;
+const canvas = document.getElementById(
+  "game-of-life-canvas"
+) as HTMLCanvasElement;
 canvas.height = (CELL_SIZE + 1) * height + 1;
 canvas.width = (CELL_SIZE + 1) * width + 1;
 
@@ -56,7 +58,6 @@ const drawCells = () => {
 
   const cellsPtr = universe.cells();
   const cells = new Uint8Array(memory.buffer, cellsPtr, (width * height) / 8);
-
 
   ctx.beginPath();
 
@@ -107,13 +108,18 @@ class FpsCounter {
 
   constructor() {
     this.fpsContainer = document.getElementById("fps-value") as HTMLElement;
-    this.avgFpsContainer = document.getElementById("avg-fps-value") as HTMLElement;
-    this.minFpsContainer = document.getElementById("min-fps-value") as HTMLElement;
-    this.maxFpsContainer = document.getElementById("max-fps-value") as HTMLElement;
+    this.avgFpsContainer = document.getElementById(
+      "avg-fps-value"
+    ) as HTMLElement;
+    this.minFpsContainer = document.getElementById(
+      "min-fps-value"
+    ) as HTMLElement;
+    this.maxFpsContainer = document.getElementById(
+      "max-fps-value"
+    ) as HTMLElement;
     this.frames = [];
     this.lastFrameTimeStamp = performance.now();
   }
-
 
   render() {
     const now = performance.now();
@@ -145,13 +151,14 @@ class FpsCounter {
   }
 }
 
-
 // Handle fps
 const fps = new FpsCounter();
 
 let animationId: number | null = null;
 
-const ticksPerFrame = document.getElementById("ticks-per-frame") as HTMLInputElement;
+const ticksPerFrame = document.getElementById(
+  "ticks-per-frame"
+) as HTMLInputElement;
 
 const renderLoop = () => {
   // debugger;
@@ -175,7 +182,9 @@ const isPaused = () => {
   return animationId === null;
 };
 
-const playPauseButton = document.getElementById("play-pause") as HTMLButtonElement;
+const playPauseButton = document.getElementById(
+  "play-pause"
+) as HTMLButtonElement;
 
 const play = () => {
   playPauseButton.textContent = "⏸";
@@ -224,7 +233,9 @@ canvas.addEventListener("click", (event) => {
   drawCells();
 });
 
-const randomizeButton = document.getElementById("randomize") as HTMLButtonElement;
+const randomizeButton = document.getElementById(
+  "randomize"
+) as HTMLButtonElement;
 
 randomizeButton.addEventListener("click", (_event) => {
   universe = Universe.new_random();
@@ -232,7 +243,9 @@ randomizeButton.addEventListener("click", (_event) => {
   drawCells();
 });
 
-const resetButton = document.getElementById("reset-universe") as HTMLButtonElement;
+const resetButton = document.getElementById(
+  "reset-universe"
+) as HTMLButtonElement;
 
 resetButton.addEventListener("click", () => {
   universe.clear_cells();
@@ -242,7 +255,9 @@ resetButton.addEventListener("click", () => {
 
 // Add debug toggle
 let debug = false;
-const debugButton = document.getElementById("toggle-debug") as HTMLButtonElement;
+const debugButton = document.getElementById(
+  "toggle-debug"
+) as HTMLButtonElement;
 debugButton.addEventListener("click", () => {
   debug = !debug;
   universe.set_debug(debug);
