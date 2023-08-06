@@ -1,19 +1,20 @@
-import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-import compress from "astro-compress";
+import { defineConfig } from "astro/config";
+import tailwind from "@astrojs/tailwind";
 import prefetch from "@astrojs/prefetch";
-import wasm from 'vite-plugin-wasm'
+import wasm from "vite-plugin-wasm";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [wasm(), tailwind(), compress(), prefetch()],
+  integrations: [wasm(), tailwind(), prefetch()],
   vite: {
     optimizeDeps: {
-      exclude: ['@dylf/wasm-game-of-life'],
+      exclude: ["@dylf/wasm-game-of-life"],
     },
     plugins: [wasm()],
     define: {
-      'import.meta.env.VERCEL_ANALYTICS_ID': JSON.stringify(process.env.VERCEL_ANALYTICS_ID)
-    }
-  }
+      "import.meta.env.VERCEL_ANALYTICS_ID": JSON.stringify(
+        process.env.VERCEL_ANALYTICS_ID
+      ),
+    },
+  },
 });
