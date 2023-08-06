@@ -14,6 +14,21 @@ dependencies:
   '@dylf/wasm-game-of-life':
     specifier: ^0.1.0
     version: 0.1.0
+  '@fontsource-variable/signika':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@fontsource-variable/work-sans':
+    specifier: ^5.0.9
+    version: 5.0.9
+  '@fontsource/orienta':
+    specifier: ^5.0.8
+    version: 5.0.8
+  '@fontsource/victor-mono':
+    specifier: ^5.0.7
+    version: 5.0.7
+  '@fontsource/work-sans':
+    specifier: ^5.0.8
+    version: 5.0.8
   astro:
     specifier: ^2.10.1
     version: 2.10.1(@types/node@18.17.3)
@@ -805,6 +820,26 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource-variable/signika@5.0.8:
+    resolution: {integrity: sha512-0Ab8X7/RUKaXDVX8HuT9DyAFSGc0PNcQUuxQWHbrje4sD9639T7GHB8xJ4CQYsHowhxoiFuadXT7xxDCBmQRAw==}
+    dev: false
+
+  /@fontsource-variable/work-sans@5.0.9:
+    resolution: {integrity: sha512-aGK91wJIc7HPQ1hT5vAfGui0OajlaDc/ZCU5xvugr6ITXlyudM5qVfpjGEMpe4ACACRGeC5bKYFYZlX4pW9gzA==}
+    dev: false
+
+  /@fontsource/orienta@5.0.8:
+    resolution: {integrity: sha512-v8iyZOscO5hZFDRi3BZLu+OSkReMUqchEZg0aYgUlYWJRl5YiLn2JCGAO1MyZ3Kx+47j1BKX5hpeXoN/+g/A7Q==}
+    dev: false
+
+  /@fontsource/victor-mono@5.0.7:
+    resolution: {integrity: sha512-jzWHjeKM7KfxhgxysZ+8gcORy3Akn5KH32Cwb0sQrAxfZAUJYNnww9EjHtpGBxjIpAQLiSMScIjbqN1GeudTOw==}
+    dev: false
+
+  /@fontsource/work-sans@5.0.8:
+    resolution: {integrity: sha512-goUwxyoQwwv5KeeZ1R9bdq3fL7YMzkFZr3YskJaMBqs/6IcqJyQpTQzfSQzbdLjz/zObWZUPQose9LpTGG/lkg==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
