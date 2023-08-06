@@ -1,6 +1,7 @@
 ---
-import Footer from '@/components/Footer/Footer.astro';
-import Header from '@/components/Header/Header.astro';
+import { ViewTransitions } from "astro:transitions";
+import Footer from "@/components/Footer/Footer.astro";
+import Header from "@/components/Header/Header.astro";
 
 export interface Props {
   title: string;
@@ -48,34 +49,35 @@ const pageTitle = `${title} | Dylan Fontaine`;
         type="text/css"
       />
     </noscript>
+    <ViewTransitions />
   </head>
   <body
     class:list={[
-      'bg-custom-purple',
-      'text-white',
-      'container',
-      'mx-auto',
-      'bg-gradient-to-t',
-      'from-black',
-      'via-custom-purple',
-      'to-custom-purple',
-      'min-h-screen',
-      'flex-col',
-      'flex',
-      'my-0',
-      'py-0',
-      'selection:text-black',
-      'selection:bg-green-300',
+      "bg-custom-purple",
+      "text-white",
+      "container",
+      "mx-auto",
+      "bg-gradient-to-t",
+      "from-black",
+      "via-custom-purple",
+      "to-custom-purple",
+      "min-h-screen",
+      "flex-col",
+      "flex",
+      "my-0",
+      "py-0",
+      "selection:text-black",
+      "selection:bg-green-300",
     ]}
   >
     <script>
-      import reportWebVitals from '@/reportWebVitals';
-      import { sendToVercelAnalytics } from '@/vitals';
+      import reportWebVitals from "@/reportWebVitals";
+      import { sendToVercelAnalytics } from "@/vitals";
       reportWebVitals(sendToVercelAnalytics);
     </script>
 
     <Header currentPath={path} />
-    <main class:list={['p-5', 'flex-1']}>
+    <main class:list={["p-5", "flex-1"]}>
       <slot />
     </main>
     <Footer />

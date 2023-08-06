@@ -5,6 +5,9 @@ import wasm from "vite-plugin-wasm";
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    viewTransitions: true,
+  },
   integrations: [wasm(), tailwind(), prefetch()],
   vite: {
     optimizeDeps: {
