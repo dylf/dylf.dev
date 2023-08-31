@@ -6,6 +6,11 @@ import wasm from "vite-plugin-wasm";
 // https://astro.build/config
 export default defineConfig({
   integrations: [wasm(), tailwind(), prefetch()],
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/noop",
+    },
+  },
   vite: {
     optimizeDeps: {
       exclude: ["@dylf/wasm-game-of-life"],
