@@ -1,16 +1,15 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import prefetch from "@astrojs/prefetch";
 import wasm from "vite-plugin-wasm";
 
-// https://astro.build/config
 export default defineConfig({
-  integrations: [wasm(), tailwind(), prefetch()],
+  integrations: [wasm(), tailwind()],
   image: {
     service: {
       entrypoint: "astro/assets/services/noop",
     },
   },
+  prefetch: true,
   vite: {
     optimizeDeps: {
       exclude: ["@dylf/wasm-game-of-life"],
