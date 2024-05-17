@@ -1,0 +1,78 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/Link.astro";
+---
+
+<Layout title="Uses" description="Stuff I Use" path="/uses">
+  <section id="things" class="mb-20">
+    <h2 class="mb-4 font-headline text-3xl">Stuff I use</h2>
+    <section id="software" class="mb-8">
+      <h2 class="mb-4 font-headline text-2xl">Software</h2>
+      <ul class="list-inside list-disc space-y-2">
+        <li>
+          🐧Linux (!Pop_OS)
+          <ul class="ml-4 list-inside list-disc">
+            <li>🐚 Zsh</li>
+            <li>👾 Wezterm</li>
+            <li>🪟 tmux</li>
+            <li>💤 lazygit</li>
+            <li>
+              <Link href="https://github.com/dylf/dotfiles">
+                ⚙️ My dotfiles
+              </Link> managed by <Link href="https://yadm.io">yadm</Link>
+            </li>
+            <li>
+              <Link href="https://github.com/dylf/workstation-playbook">
+                📕 Ansible playbook
+              </Link> (surely outdated 😅)
+            </li>
+          </ul>
+        </li>
+        <li>
+          📝 Editor - Neovim
+          <ul class="ml-4 list-inside list-disc">
+            <li>
+              <Link href="https://github.com/dylf/nvim-config">My config</Link>
+            </li>
+          </ul>
+        </li>
+        <li>📓 Obisidian</li>
+        <li>⏺️ OBS</li>
+        <li>🦁 Brave browser</li>
+        <li>🚀 Lando</li>
+      </ul>
+    </section>
+    <h2 class="mb-4 font-headline text-2xl">Hardware</h2>
+
+    <ul class="list-inside list-disc space-y-2">
+      <li>
+        ⌨️ Custom built Dactyl Manuform
+        <ul class="ml-4 list-inside list-disc">
+          <li>
+            <Link href="https://github.com/dylf/qmk_userspace">
+              QMK Firmware
+            </Link>
+          </li>
+          <li>
+            <Link href="https://github.com/dylf/dactyl-keyboard">
+              Dactyl Manuform
+            </Link>
+          </li>
+        </ul>
+      </li>
+      <li>🖱️Logitech MX Ergo Trackball</li>
+      <li>🎧 Philips SHP9500</li>
+      <li>🎤 Unidyne III</li>
+      <li>🖥️ Alienware AW3821DW</li>
+      <li>
+        Desktop PC
+        <ul class="ml-4 list-inside list-disc">
+          <li>🧠 Ryzen 9 5900X</li>
+          <li>🐏 32GB DDR4</li>
+          <li>📹 RTX 3070ti</li>
+        </ul>
+      </li>
+      <li>💻 Dell XPS 15 9750</li>
+    </ul>
+  </section>
+</Layout>
