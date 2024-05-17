@@ -1,9 +1,12 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import wasm from "vite-plugin-wasm";
+import sitemap from "@astrojs/sitemap";
 
+// https://astro.build/config
 export default defineConfig({
-  integrations: [wasm(), tailwind()],
+  site: "https://dylf.dev",
+  integrations: [wasm(), tailwind(), sitemap()],
   image: {
     service: {
       entrypoint: "astro/assets/services/noop",
@@ -22,3 +25,4 @@ export default defineConfig({
     },
   },
 });
+

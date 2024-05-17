@@ -11,6 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.1.4",
     "@astrojs/tailwind": "^5.1.0",
     "@dylf/wasm-game-of-life": "^0.1.0",
     "@fontsource-variable/signika": "^5.0.20",
