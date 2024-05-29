@@ -12,9 +12,15 @@ export interface Props {
   title: string;
   description: string;
   path: string;
+  frontmatter?: {
+    title: string;
+    description: string;
+    url: string;
+  };
 }
 
-const { title, description, path } = Astro.props;
+const path = Astro.props.frontmatter?.url || Astro.props.path;
+const { title, description } = Astro.props.frontmatter || Astro.props;
 const canonicalUrl = `https://www.dylf.dev${Astro.url.pathname}`;
 const pageTitle = `${title} | Dylan Fontaine`;
 ---
