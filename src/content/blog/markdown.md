@@ -1,5 +1,4 @@
 ---
-layout: '@/layouts/Layout.astro'
 title: 'My Markdown page'
 description: 'This is a markdown page'
 ---
