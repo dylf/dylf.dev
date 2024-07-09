@@ -1,8 +1,14 @@
 ---
-import Projects from '@/components/Home/Projects.astro';
-import Layout from '@/layouts/Layout.astro';
+import Projects from "@/components/Home/Projects.astro";
+import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="Projects" description="Things that I'm making" path="/projects">
+  <main class="container mx-auto">
+    <h1 class="mb-4 font-headline text-5xl">Projects</h1>
+    <p class="mb-20 text-xl">
+      A collection of things I've hacked on in my spare time.
+    </p>
+  </main>
   <Projects />
 </Layout>

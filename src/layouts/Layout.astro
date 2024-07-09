@@ -14,15 +14,10 @@ export interface Props {
   title: string;
   description: string;
   path: string;
-  frontmatter?: {
-    title: string;
-    description: string;
-    url: string;
-  };
 }
 
-const path = Astro.props.frontmatter?.url || Astro.props.path;
-const { title, description } = Astro.props.frontmatter || Astro.props;
+const path = Astro.props.path;
+const { title, description } = Astro.props;
 const canonicalUrl = `https://www.dylf.dev${Astro.url.pathname}`;
 const pageTitle = `${title} | Dylan Fontaine`;
 ---
@@ -57,8 +52,6 @@ const pageTitle = `${title} | Dylan Fontaine`;
     class:list={[
       "bg-custom-purple",
       "text-white",
-      "container",
-      "mx-auto",
       "bg-gradient-to-t",
       "from-black",
       "via-custom-purple",
@@ -73,7 +66,7 @@ const pageTitle = `${title} | Dylan Fontaine`;
     ]}
   >
     <Header currentPath={path} />
-    <main class:list={["p-5", "flex-1"]}>
+    <main class="flex-1">
       <slot />
     </main>
     <Footer />

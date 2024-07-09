@@ -2,39 +2,41 @@
 import Card from "./ProjectCard.astro";
 ---
 
-<section id="featured-posts" class="mb-20">
-  <h2 class="mb-4 font-headline text-3xl">Stuff I've made</h2>
-  <ul class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-    <Card
-      href="projects/wasm-game-of-life"
-      title="WASM Game of Life"
-      tags={["wasm", "rust"]}
+<div class="w-full">
+  <section id="featured-posts" class="container mx-auto mb-20 py-0">
+    <h2 class="mb-4 font-headline text-3xl">Stuff I've made</h2>
+    <ul class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <Card
+        href="projects/wasm-game-of-life"
+        title="WASM Game of Life"
+        tags={["wasm", "rust"]}
+      >
+        A simple implementation of Conway's Game of Life using Rust and
+        WebAssembly.
+      </Card>
+      <Card
+        href="https://github.com/dylf/base64-decode-extension"
+        title="Base64 Decode Extension"
+        tags={["chrome-extension", "typescript"]}
+      >
+        A chrome extension for decoding base64 encoded strings, and opening base
+        64 encoded urls.
+      </Card>
+    </ul>
+    <a
+      href="https://www.github.com/dylf"
+      class:list={[
+        "hover:text-cyan-300",
+        "font-light",
+        "hover:underline",
+        "ease-in",
+        "duration-100",
+        "text-lg",
+        "float-right",
+      ]}
     >
-      A simple implementation of Conway's Game of Life using Rust and
-      WebAssembly.
-    </Card>
-    <Card
-      href="https://github.com/dylf/base64-decode-extension"
-      title="Base64 Decode Extension"
-      tags={["chrome-extension", "typescript"]}
-    >
-      A chrome extension for decoding base64 encoded strings, and opening base
-      64 encoded urls.
-    </Card>
-  </ul>
-  <a
-    href="https://www.github.com/dylf"
-    class:list={[
-      "hover:text-cyan-300",
-      "font-light",
-      "hover:underline",
-      "ease-in",
-      "duration-100",
-      "text-lg",
-      "float-right",
-    ]}
-  >
-    More projects
-    <span class="text-xl">&rarr;</span>
-  </a>
-</section>
+      View more projects on GitHub
+      <span class="text-xl">&rarr;</span>
+    </a>
+  </section>
+</div>
