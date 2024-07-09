@@ -11,14 +11,16 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 
-import Layout from "@/layouts/Layout.astro";
+import Layout from "@/layouts/BlogLayout.astro";
 import Prose from "@/components/Prose.astro";
 ---
 
 <Layout
-  title={entry.data.title}
-  description={entry.data.discription}
-  path={"/blog/" + entry.slug}
+  frontmatter={{
+    title: entry.data.title,
+    description: entry.data.description,
+    url: `blog/${entry.slug}`,
+  }}
 >
   <Prose>
     <Content />
