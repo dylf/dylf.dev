@@ -4,6 +4,8 @@ import "@fontsource-variable/signika";
 import "@fontsource-variable/work-sans/wght-italic.css";
 import "@fontsource/victor-mono";
 
+import SpeedInsights from "@vercel/speed-insights/astro";
+
 import { ViewTransitions } from "astro:transitions";
 import Footer from "@/components/Footer/Footer.astro";
 import Header from "@/components/Header/Header.astro";
@@ -49,6 +51,7 @@ const pageTitle = `${title} | Dylan Fontaine`;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <ViewTransitions />
+    <SpeedInsights />
   </head>
   <body
     class:list={[
@@ -69,12 +72,6 @@ const pageTitle = `${title} | Dylan Fontaine`;
       "selection:bg-green-300",
     ]}
   >
-    <script>
-      import reportWebVitals from "@/reportWebVitals";
-      import { sendToVercelAnalytics } from "@/vitals";
-      reportWebVitals(sendToVercelAnalytics);
-    </script>
-
     <Header currentPath={path} />
     <main class:list={["p-5", "flex-1"]}>
       <slot />
