@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.7.2",
     "@dylf/wasm-game-of-life": "^0.1.0",
     "@fontsource-variable/signika": "^5.0.20",
     "@fontsource-variable/work-sans": "^5.0.19",
