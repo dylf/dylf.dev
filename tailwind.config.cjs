@@ -9,8 +9,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        "custom-purple": "#2a243c",
-        greeny: "#009d52",
+        "bg-primary": "#2a243c",
+        "fg-highlight": "#009d52",
         "active-highlight": "#c78bff",
       },
       fontFamily: {

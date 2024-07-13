@@ -1,0 +1,4 @@
+title: WASM Game of Life
+description: A simple implementation of Conway's Game of Life using Rust and WebAssembly.
+sourceUrl: https://github.com/dylf/wasm-game-of-life
+liveUrl: /projects/wasm-game-of-life

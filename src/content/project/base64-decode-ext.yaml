@@ -1,0 +1,4 @@
+title: Base64 Decode Extension
+description: A chrome extension that decodes base 64 encoded strings, and opens encoded URLs
+sourceUrl: https://github.com/dylf/base64-decode-extension
+liveUrl: https://chromewebstore.google.com/detail/base-64-decode/cjjhhjjoenldlkfbdinpigfcpkhijhco

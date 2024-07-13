@@ -8,6 +8,16 @@ const blogCollection = defineCollection({
   }),
 });
 
+const projectCollection = defineCollection({
+  type: "data",
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    sourceUrl: z.string(),
+    liveUrl: z.string(),
+  }),
+});
 export const collections = {
   blog: blogCollection,
+  project: projectCollection,
 };
