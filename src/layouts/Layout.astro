@@ -6,9 +6,9 @@ import "@fontsource/victor-mono";
 
 import SpeedInsights from "@vercel/speed-insights/astro";
 
-import "@/styles/global.css";
+import globalStylesHref from "@/styles/global.css?url";
 
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Footer from "@/components/Footer/Footer.astro";
 import Header from "@/components/Header/Header.astro";
 
@@ -24,7 +24,7 @@ const canonicalUrl = `https://www.dylf.dev${Astro.url.pathname}`;
 const pageTitle = `${title} | Dylan Fontaine`;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -43,19 +43,20 @@ const pageTitle = `${title} | Dylan Fontaine`;
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ShallowClone" />
     <link rel="canonical" href={canonicalUrl} />
+    <link rel="stylesheet" href={globalStylesHref} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <ViewTransitions />
+    <ClientRouter />
     <SpeedInsights />
   </head>
   <body
     class:list={[
       "bg-bg-primary",
       "text-white",
-      "bg-gradient-to-t",
-      "from-black",
+      "bg-linear-to-t",
+      "from-black/70",
       "via-bg-primary",
       "to-bg-primary",
       "min-h-screen",

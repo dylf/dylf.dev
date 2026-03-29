@@ -14,15 +14,14 @@ const { liveUrl, sourceUrl, title, description } = Astro.props;
     "p-5",
     "flex",
     "hover:animate-gradient-xy",
-    "hover:bg-gradient-to-tr",
+    "hover:bg-linear-to-tr",
     "to-cyan-500",
     "via-purple-900",
     "from-black",
     "rounded-xl",
     "duration-200",
-    "hover:bg-opacity-0",
-    "bg-black",
-    "bg-opacity-40",
+    "bg-black/40",
+    "hover:bg-black/0",
   ]}
 >
   <div class:list={["mx-auto", "p-3", "w-full", "relative"]}>

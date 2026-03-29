@@ -6,7 +6,7 @@ const projects = await getCollection("project");
 
 <div class="w-full">
   <section id="featured-posts" class="container mx-auto mb-20 py-0">
-    <h2 class="mb-4 font-headline text-3xl">Stuff I've made</h2>
+    <h2 class="font-headline mb-4 text-3xl">Stuff I've made</h2>
     <ul class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
       {
         projects.map((project) => (
@@ -30,7 +30,7 @@ const projects = await getCollection("project");
         "ease-in",
         "duration-100",
         "text-lg",
-        "float-right",
+        "float-left",
       ]}
     >
       View more projects on GitHub
