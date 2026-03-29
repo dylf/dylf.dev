@@ -1,33 +1,51 @@
 ---
-import Icon from '@/components/Icon.astro';
+import Icon from "@/components/Icon.astro";
+import { Image } from "astro:assets";
 ---
 
-<footer class="p-5 text-gray-400 flex-col text-center text-xs font mb-4">
-  <div class="mb-3 flex-row flex justify-center">
-    <Icon
-      icon="GitHub"
-      class="stroke-2 stroke-gray-400 fill-none w-8 h-8 m-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
-      href="https://www.github.com/dylf"
-    />
-    <Icon
-      icon="Twitter"
-      class="stroke-2 stroke-gray-400 fill-none w-8 h-8 m-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
-      href="https://www.twitter.com/ShallowClone"
-    />
-    <Icon
-      icon="LinkedIn"
-      class="stroke-2 stroke-gray-400 fill-none w-8 h-8 m-2 hover:scale-110 ease-in duration-100 hover:stroke-cyan-400"
-      href="https://www.linkedin.com/in/dylan-fontaine/"
-    />
+<footer class="font mb-4 flex justify-around text-center text-xs text-gray-400">
+  <Image src={"/skull-flame.gif"} alt="flaming skull" width="50" />
+  <div class="flex-col">
+    <div class="mb-3 flex flex-row justify-center">
+      <a
+        href="https://www.github.com/dylf"
+        title="GitHub"
+        class="m-2 h-8 w-8 hover:bg-purple-400"
+      >
+        <Image src={"/octocat.gif"} alt="github" width="32" height="32" />
+      </a>
+      <a
+        href="https://www.x.com/dylf"
+        title="Twitter"
+        class="m-2 h-8 w-8 hover:bg-purple-400"
+      >
+        <Image src={"/twitter.gif"} alt="twitter" width="32" height="32" />
+      </a>
+      <a
+        href="https://www.twitch.tv/shallowclone"
+        title="Twitch"
+        class="m-2 h-8 w-8 hover:bg-purple-400"
+      >
+        <Image src={"/twitch.gif"} alt="twitch" width="32" height="32" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/dylan-fontaine/"
+        title="LinkedIn"
+        class="m-2 h-8 w-8 hover:bg-purple-400"
+      >
+        <Image src={"/linkedin.gif"} alt="linked" width="32" height="32" />
+      </a>
+    </div>
+    <div>
+      Copyright © Dylan Fontaine 🛠️ Built with
+      <a href="https://www.astro.build" class="underline hover:text-cyan-400">
+        Astro</a
+      >
+      &
+      <a href="https://tailwindcss.com" class="underline hover:text-cyan-400">
+        tailwindcss</a
+      >
+    </div>
   </div>
-  <div>
-    Copyright © Dylan Fontaine 🛠️ Built with
-    <a href="https://www.astro.build" class="underline hover:text-cyan-400">
-      Astro</a
-    >
-    &
-    <a href="https://tailwindcss.com" class="underline hover:text-cyan-400">
-      tailwindcss</a
-    >
-  </div>
+  <Image src={"/skull-flame.gif"} alt="flaming skull" width="50" />
 </footer>

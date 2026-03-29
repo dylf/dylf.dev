@@ -5,12 +5,12 @@ interface Props {
 }
 
 const { href, active = false } = Astro.props;
-const activeClass = active ? 'text-active-highlight scale-110' : '';
+const activeClass = active ? "text-active-highlight scale-110" : "";
 ---
 
 <li
   class:list={[
-    'hover:scale-110 ease-in duration-100 hover:text-cyan-400',
+    "duration-100 ease-in hover:scale-110 hover:text-cyan-400",
     activeClass,
   ]}
 >

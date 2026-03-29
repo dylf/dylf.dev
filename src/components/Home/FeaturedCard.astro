@@ -10,25 +10,25 @@ const { href, title, tags = [] } = Astro.props;
 
 <li
   class:list={[
-    'p-5',
-    'lg:p-2',
-    'mb-4',
-    'flex',
-    'hover:animate-gradient-xy',
-    'hover:bg-linear-to-tr',
-    'to-cyan-500',
-    'via-purple-900',
-    'from-black',
-    'rounded-xl',
-    'duration-200',
-    'bg-black/40',
-    'hover:bg-black/0',
+    "p-5",
+    "lg:p-2",
+    "mb-4",
+    "flex",
+    "hover:animate-gradient-xy",
+    "hover:bg-linear-to-tr",
+    "to-cyan-500",
+    "via-purple-900",
+    "from-black",
+    "rounded-xl",
+    "duration-200",
+    "bg-black/40",
+    "hover:bg-black/0",
   ]}
 >
-  <article class:list={['mx-auto', 'p-3', 'w-full', 'relative']}>
+  <article class:list={["mx-auto", "p-3", "w-full", "relative"]}>
     <a
       rel="prefetch"
-      class="absolute cursor-pointer top-0 bottom-0 right-0 left-0"
+      class="absolute top-0 right-0 bottom-0 left-0 cursor-pointer"
       href={href}
       aria-label={`${title} Card`}></a>
     <h3 class="text-subheading text-xl">
@@ -43,20 +43,20 @@ const { href, title, tags = [] } = Astro.props;
               rel="prefetch"
               href={`/blog?tags=${tag}`}
               class:list={[
-                'cursor-pointer',
-                'z-10',
-                'lowercase',
-                'rounded-2xl',
-                'border',
-                'py-1',
-                'px-3',
-                'mr-2',
-                'my-1',
-                'hover:bg-cyan-400',
-                'hover:text-black',
-                'ease-in',
-                'duration-100',
-                'inline-block',
+                "cursor-pointer",
+                "z-10",
+                "lowercase",
+                "rounded-2xl",
+                "border",
+                "py-1",
+                "px-3",
+                "mr-2",
+                "my-1",
+                "hover:bg-cyan-400",
+                "hover:text-black",
+                "ease-in",
+                "duration-100",
+                "inline-block",
               ]}
             >
               #{tag}
@@ -65,18 +65,18 @@ const { href, title, tags = [] } = Astro.props;
         </div>
       )
     }
-    <div class="flex mt-2 text-gray-300">
+    <div class="mt-2 flex text-gray-300">
       <p class="basis-3/4">
         <slot />
       </p>
       <span
         class:list={[
-          'basis-1/4',
-          'text-xs',
-          'text-right',
-          'uppercase',
-          'flex-end',
-          'self-end',
+          "basis-1/4",
+          "text-xs",
+          "text-right",
+          "uppercase",
+          "flex-end",
+          "self-end",
         ]}>October 20, 2030</span
       >
     </div>

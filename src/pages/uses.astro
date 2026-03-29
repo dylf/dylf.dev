@@ -1,77 +1,88 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Uses" description="Stuff I Use" path="/uses">
-  <main id="uses" class="container mx-auto mb-20">
-    <h2 class="mb-4 font-headline text-5xl">Stuff I use</h2>
-    <section id="software" class="mb-8">
-      <h2 class="mb-2 font-headline text-2xl">Software</h2>
-      <ul class="list-inside list-disc space-y-2">
-        <li>
-          🐧Linux (!Pop_OS)
-          <ul class="ml-4 list-inside list-disc">
-            <li>🐚 Zsh</li>
-            <li>👾 Wezterm</li>
-            <li>🪟 tmux</li>
-            <li>💤 lazygit</li>
-            <li>
-              <Link href="https://github.com/dylf/dotfiles">
-                ⚙️ My dotfiles
-              </Link> managed by <Link href="https://yadm.io">yadm</Link>
-            </li>
-            <li>
-              <Link href="https://github.com/dylf/workstation-playbook">
-                📕 Ansible playbook
-              </Link> (surely outdated 😅)
-            </li>
-          </ul>
-        </li>
-        <li>
-          📝 Editor - Neovim
-          <ul class="ml-4 list-inside list-disc">
-            <li>
-              <Link href="https://github.com/dylf/nvim-config">My config</Link>
-            </li>
-          </ul>
-        </li>
-        <li>📓 Obisidian</li>
-        <li>⏺️ OBS</li>
-        <li>🦁 Brave browser</li>
-        <li>🚀 Lando</li>
-      </ul>
-    </section>
-    <h2 class="mb-2 font-headline text-2xl">Hardware</h2>
+  <h2 class="font-headline mb-4 text-5xl">
+    Stuff I use (but probably not because I don't update this)
+  </h2>
+  <section id="software" class="mb-8">
+    <h2 class="font-headline mb-2 text-2xl">Software</h2>
     <ul class="list-inside list-disc space-y-2">
       <li>
-        ⌨️ Custom built Dactyl Manuform
+        🐧Linux (Various distros but also Windows and MacOS)
         <ul class="ml-4 list-inside list-disc">
+          <li>🐚 Zsh</li>
+          <li>👾 Wezterm</li>
+          <li>🪟 tmux</li>
+          <li>💤 lazygit</li>
           <li>
-            <Link href="https://github.com/dylf/qmk_userspace">
-              QMK Firmware
-            </Link>
+            <Link href="https://github.com/dylf/dotfiles">
+              ⚙️ My dotfiles
+            </Link> managed by <Link href="https://yadm.io">yadm</Link>
           </li>
           <li>
-            <Link href="https://github.com/dylf/dactyl-keyboard">
-              Dactyl Manuform
+            <Link href="https://github.com/dylf/workstation-playbook">
+              📕 Ansible playbook
             </Link>
           </li>
         </ul>
       </li>
-      <li>🖱️Logitech MX Ergo Trackball</li>
-      <li>🎧 Philips SHP9500</li>
-      <li>🎤 Unidyne III</li>
-      <li>🖥️ Alienware AW3821DW</li>
       <li>
-        Desktop PC
+        📝 Editor - Neovim
         <ul class="ml-4 list-inside list-disc">
-          <li>🧠 Ryzen 9 5900X</li>
-          <li>🐏 32GB DDR4</li>
-          <li>📹 RTX 3070ti</li>
+          <li>
+            <Link href="https://github.com/dylf/nvim-config">My config</Link>
+          </li>
         </ul>
       </li>
-      <li>💻 Dell XPS 15 9750</li>
+      <li>📓 Obisidian</li>
+      <li>⏺️ OBS</li>
+      <li>🦁 Brave browser</li>
+      <li>🚀 Lando</li>
     </ul>
-  </main>
+  </section>
+  <h2 class="font-headline mb-2 text-2xl">Hardware</h2>
+  <ul class="list-inside list-disc space-y-2">
+    <li>
+      ⌨️ Custom built Dactyl Manuform
+      <ul class="ml-4 list-inside list-disc">
+        <li>
+          <Link href="https://github.com/dylf/qmk_userspace">
+            QMK Firmware
+          </Link>
+        </li>
+        <li>
+          <Link href="https://github.com/dylf/dactyl-keyboard">
+            Dactyl Manuform
+          </Link>
+        </li>
+      </ul>
+    </li>
+    <li>🖱️Logitech MX Ergo Trackball & GPX Superlight 2C</li>
+    <li>🎧 Sennheiser HD 560S</li>
+    <li>🎤 Unidyne III</li>
+    <li>🖥️ Alienware AW3821DW</li>
+    <li>Elgato Stuff</li>
+    <li>
+      Desktop PC
+      <ul class="ml-4 list-inside list-disc">
+        <li>🧠 Ryzen 9 5900X</li>
+        <li>🐏 64GB DDR4</li>
+        <li>📹 RTX 5070ti</li>
+      </ul>
+    </li>
+  </ul>
+  <span slot="sidebar" class="mx-auto mt-20 max-w-2xl text-center text-xl">
+    I have a lot of stuff
+    <Image
+      src={"/study.gif"}
+      alt="alchemists study"
+      width="200"
+      height="200"
+      loading="eager"
+    />
+  </span>
 </Layout>

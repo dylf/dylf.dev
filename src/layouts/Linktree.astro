@@ -4,13 +4,9 @@ import "@fontsource-variable/signika";
 import "@fontsource-variable/work-sans/wght-italic.css";
 import "@fontsource/victor-mono";
 
-import SpeedInsights from "@vercel/speed-insights/astro";
-
 import globalStylesHref from "@/styles/global.css?url";
 
 import { ClientRouter } from "astro:transitions";
-import Footer from "@/components/Footer/Footer.astro";
-import Header from "@/components/Header/Header.astro";
 
 export interface Props {
   title: string;
@@ -18,7 +14,6 @@ export interface Props {
   path: string;
 }
 
-const path = Astro.props.path;
 const { title, description } = Astro.props;
 const canonicalUrl = `https://www.dylf.dev${Astro.url.pathname}`;
 const pageTitle = `${title} | Dylan Fontaine`;
@@ -38,6 +33,7 @@ const pageTitle = `${title} | Dylan Fontaine`;
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Dylan Fontaine" />
+    <meta property="og:image" content="https://www.dylf.dev/dylf-summary.png" />
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@ShallowClone" />
@@ -53,20 +49,12 @@ const pageTitle = `${title} | Dylan Fontaine`;
     />
 
     <ClientRouter />
-    <SpeedInsights />
   </head>
-  <body class="selection:bg-purple-900">
-    <div
-      class="container mx-auto max-w-360 grid-cols-1 gap-4 md:grid-cols-[18rem_1fr_150px]"
-    >
-      <Header currentPath={path} />
-      <aside class="flex-1">
-        <slot name="sidebar" />
-      </aside>
+  <body class:list={["linktree"]}>
+    <div class="container mx-auto max-w-200">
       <main class="flex-1">
         <slot />
       </main>
-      <Footer />
     </div>
   </body>
 </html>

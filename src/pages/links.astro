@@ -1,0 +1,127 @@
+---
+import Layout from "@/layouts/Linktree.astro";
+import Link from "@/components/Link.astro";
+import { Image } from "astro:assets";
+
+const links = [
+  {
+    name: "Website",
+    href: "/",
+    bgClass: "bg-cyan-800",
+    borderClass: "border-cyan-900",
+    hoverBorderClass: "hover:border-cyan-600",
+    hoverBgClass: "hover:bg-cyan-600",
+    target: "_self",
+  },
+  {
+    name: "Twitch",
+    href: "https://www.twitch.tv/shallowclone",
+    bgClass: "bg-purple-800",
+    borderClass: "border-purple-900",
+    hoverBorderClass: "hover:border-purple-600",
+    hoverBgClass: "hover:bg-purple-600",
+  },
+  {
+    name: "Youtube",
+    href: "https://www.youtube.com/@shallowclone",
+    bgClass: "bg-red-800",
+    borderClass: "border-red-900",
+    hoverBorderClass: "hover:border-red-600",
+    hoverBgClass: "hover:bg-red-600",
+  },
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@shallowclone",
+    color: "pink",
+    bgClass: "bg-olive-800",
+    borderClass: "border-olive-900",
+    hoverBorderClass: "hover:border-olive-600",
+    hoverBgClass: "hover:bg-olive-600",
+  },
+  {
+    name: "Github",
+    href: "https://github.com/dylf",
+    bgClass: "bg-teal-800",
+    borderClass: "border-teal-900",
+    hoverBorderClass: "hover:border-teal-600",
+    hoverBgClass: "hover:bg-teal-600",
+  },
+  // {
+  //   name: "LinkedIn",
+  //   href: "#",
+  //   color: "blue",
+  //   bgClass: "bg-blue-800",
+  //   borderClass: "border-blue-900",
+  //   hoverBorderClass: "hover:border-blue-600",
+  //   hoverBgClass: "hover:bg-blue-600",
+  // },
+  {
+    name: "Twitter",
+    href: "https://x.com/shallowclone",
+    bgClass: "bg-gray-800",
+    borderClass: "border-gray-900",
+    hoverBorderClass: "hover:border-gray-600",
+    hoverBgClass: "hover:bg-gray-600",
+  },
+];
+---
+
+<Layout title="Linktree" description="All my links" path="/links">
+  <div class="flex justify-around flex-row mb-12">
+    <Image
+      src={"/cyberskull.gif"}
+      alt="linktree"
+      width="80"
+      height="80"
+      loading="eager"
+    />
+    <h2 class="align-center inline font-headline mb-4 text-center text-5xl uppercase">Links to my things</h2>
+    <Image
+      src={"/cyberskull.gif"}
+      alt="linktree"
+      width="80"
+      height="80"
+      loading="eager"
+    />
+  </div>
+  <section id="software" class="mb-8">
+    <ul class="justify-center gap-4 text-center text-2xl">
+      {
+        links.map((link) => (
+          <li
+            class:list={[
+              "border-outset",
+              "uppercase",
+              "mb-6",
+              "border-8",
+              link.bgClass,
+              link.borderClass,
+              link.hoverBorderClass,
+              link.hoverBgClass,
+            ]}
+          >
+            <a href={link.href} class="block h-full w-full p-8" target={link.target ?? "_blank"} rel="noopener noreferrer">
+              {link.name}
+            </a>
+          </li>
+        <Image
+          src={"/green-hr.gif"}
+          class="mb-6"
+          alt="divider"
+          width="2000"
+          height="100"
+          loading="eager"
+        />
+        ))
+      }
+    </ul>
+    <Image
+      src={"/spider.gif"}
+      class="mb-6"
+      alt="divider"
+      width="2000"
+      height="100"
+      loading="eager"
+    />
+  </section>
+</Layout>

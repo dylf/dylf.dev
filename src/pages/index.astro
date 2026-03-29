@@ -3,15 +3,33 @@
 import Intro from "@/components/Home/Intro.astro";
 import Projects from "@/components/Home/Projects.astro";
 import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout
   title="Home"
-  description="Hello there, I'm Dylan Fontaine and this is my personal website. I'm a Software Architect interested in all things coding and web dev."
+  description="Hello, I'm Dylan and this is my website. Don't look at this, there's nothing to see here."
   path="/"
 >
   <Intro />
   <!-- <Featured /> -->
+  <Image
+    src={"/bloodbar.gif"}
+    alt="blood"
+    width="2000"
+    height="100"
+    loading="eager"
+  />
   <Projects />
+  <span slot="sidebar" class="mx-auto mt-20 max-w-2xl text-center text-xl">
+    You can't reach me
+    <Image
+      src={"/blkwidow.gif"}
+      alt="black widow"
+      width="200"
+      height="200"
+      loading="eager"
+    />
+  </span>
   <script defer src="/va/script.js"></script>
 </Layout>

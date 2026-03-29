@@ -5,7 +5,7 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     fontFamily: {
-      sans: ["Work Sans", ...defaultTheme.fontFamily.sans],
+      sans: ["Instrument Serif", ...defaultTheme.fontFamily.sans],
     },
     extend: {
       colors: {
@@ -14,8 +14,8 @@ module.exports = {
         "active-highlight": "#c78bff",
       },
       fontFamily: {
-        headline: ["Signika", ...defaultTheme.fontFamily.sans],
-        subheadline: ["Orienta", ...defaultTheme.fontFamily.sans],
+        headline: ["Instrument Serif", ...defaultTheme.fontFamily.sans],
+        subheadline: ["Instrument Serif", ...defaultTheme.fontFamily.sans],
         code: ["Victor Mono", ...defaultTheme.fontFamily.mono],
       },
       animation: {

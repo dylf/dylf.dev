@@ -1,11 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Link from "@/components/Link.astro";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="Projects" description="Things that I'm making" path="/projects">
-  <div class="container mx-auto">
-    <h2 class="mb-4 font-headline text-3xl">WASM Game of Life</h2>
+  <div class="mx-auto">
+    <h2 class="font-headline mb-4 text-3xl">WASM Game of Life</h2>
     <p class="text-md mb-4">
       This is a simple implementation of Conway's Game of Life using Rust and
       WebAssembly.
@@ -19,17 +20,21 @@ import Link from "@/components/Link.astro";
     <canvas class="mx-auto mb-4" id="game-of-life-canvas"></canvas>
     <div class="controls mb-7 grid grid-cols-4">
       <button
-        class="mx-2 rounded-xl bg-green-600 px-8 text-lg hover:bg-green-900"
+        class="border-outset mx-2 border-5 border-green-500 bg-green-600 px-8 text-lg hover:bg-green-900"
         id="play-pause">⏸</button
       >
-      <button class="mx-2 rounded-xl bg-red-600" id="reset-universe"
-        >Clear Universe</button
+      <button
+        class="border-outset mx-2 border-5 border-red-500 bg-red-600"
+        id="reset-universe">Clear Universe</button
       >
-      <button class="text-md mx-2 rounded-xl bg-orange-600" id="randomize">
+      <button
+        class="text-md border-outset mx-2 border-5 border-orange-500 bg-orange-600"
+        id="randomize"
+      >
         Randomize
       </button>
       <button
-        class="text-md mx-2 rounded-xl bg-pink-500 px-8"
+        class="border-outset text-md mx-2 border-5 border-pink-400 bg-pink-500 px-8"
         id="toggle-debug"
       >
         Debug Logging
@@ -55,23 +60,33 @@ import Link from "@/components/Link.astro";
     </div>
     <div class="mb-4 h-9" id="fps"></div>
     <div class="mb-4 grid h-9 grid-cols-4 gap-4" id="generation">
-      <div class="rounded-lg bg-gray-800 text-center">
+      <div class="bg-gray-800 text-center">
         <div>FPS</div>
         <div id="fps-value">50</div>
       </div>
-      <div class="rounded-lg bg-gray-800 text-center">
+      <div class="bg-gray-800 text-center">
         <div>Avg FPS</div>
         <div id="avg-fps-value">50</div>
       </div>
-      <div class="rounded-lg bg-gray-800 text-center">
+      <div class="bg-gray-800 text-center">
         <div>Min FPS</div>
         <div id="min-fps-value">50</div>
       </div>
-      <div class="rounded-lg bg-gray-800 text-center">
+      <div class="bg-gray-800 text-center">
         <div>Max FPS</div>
         <div id="max-fps-value">50</div>
       </div>
     </div>
     <script src="@/wasm-game-of-life/bootstrap.js"></script>
   </div>
+  <span slot="sidebar" class="mx-auto mt-20 max-w-2xl text-center text-xl">
+    That's a lot of cells
+    <Image
+      src={"/eyetent.gif"}
+      alt="alien"
+      width="200"
+      height="200"
+      loading="eager"
+    />
+  </span>
 </Layout>
