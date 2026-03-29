@@ -6,9 +6,23 @@ import { Image } from "astro:assets";
 
 <Layout title="Projects" description="Things that I'm making" path="/projects">
   <h1 class="font-headline mb-4 text-5xl">Projects</h1>
-  <p class="mb-20 text-xl">
-    A collection of things I've hacked on in my spare time.
-  </p>
+  <p class="text-xl">A collection of things I've hacked on in my spare time.</p>
+  <Image
+    class="inline"
+    src={"/term.gif"}
+    alt="term"
+    width="500"
+    height="100"
+    loading="eager"
+  />
+  <Image
+    class="inline"
+    src={"/lightning.gif"}
+    alt="lightning"
+    width="150"
+    height="100"
+    loading="eager"
+  />
   <span slot="sidebar" class="mx-auto mt-20 max-w-2xl text-center text-xl">
     Look at what I made
     <Image

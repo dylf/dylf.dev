@@ -11,33 +11,75 @@ import { Image } from "astro:assets";
         href="https://www.github.com/dylf"
         title="GitHub"
         class="m-2 h-8 w-8 hover:bg-purple-400"
+        target="_blank"
       >
-        <Image src={"/octocat.gif"} alt="github" width="32" height="32" />
+        <Image
+          src={"/octocat.gif"}
+          alt="github"
+          width="32"
+          height="32"
+          loading="eager"
+        />
       </a>
       <a
-        href="https://www.x.com/dylf"
+        href="https://www.x.com/shallowclone"
         title="Twitter"
         class="m-2 h-8 w-8 hover:bg-purple-400"
+        target="_blank"
       >
-        <Image src={"/twitter.gif"} alt="twitter" width="32" height="32" />
+        <Image
+          src={"/twitter.gif"}
+          alt="twitter"
+          width="32"
+          height="32"
+          loading="eager"
+        />
       </a>
       <a
         href="https://www.twitch.tv/shallowclone"
         title="Twitch"
         class="m-2 h-8 w-8 hover:bg-purple-400"
+        target="_blank"
       >
-        <Image src={"/twitch.gif"} alt="twitch" width="32" height="32" />
+        <Image
+          src={"/twitch.gif"}
+          alt="twitch"
+          width="32"
+          height="32"
+          loading="eager"
+        />
       </a>
       <a
-        href="https://www.linkedin.com/in/dylan-fontaine/"
-        title="LinkedIn"
+        href="https://www.tiktok.com/@shallowclone"
+        title="Twitch"
         class="m-2 h-8 w-8 hover:bg-purple-400"
+        target="_blank"
       >
-        <Image src={"/linkedin.gif"} alt="linked" width="32" height="32" />
+        <Image
+          src={"/tiktok.gif"}
+          alt="tiktok"
+          width="32"
+          height="32"
+          loading="eager"
+        />
+      </a>
+      <a
+        href="https://ko-fi.com/shallowclone"
+        title="Buy me a coffee"
+        class="m-2 h-8 w-8 hover:bg-purple-400"
+        target="_blank"
+      >
+        <Image
+          src={"/kofi.gif"}
+          alt="buy me a coffee"
+          width="32"
+          height="32"
+          loading="eager"
+        />
       </a>
     </div>
     <div>
-      Copyright © Dylan Fontaine 🛠️ Built with
+      Copyright © Dylan 🛠️ Built with
       <a href="https://www.astro.build" class="underline hover:text-cyan-400">
         Astro</a
       >
@@ -47,5 +89,10 @@ import { Image } from "astro:assets";
       >
     </div>
   </div>
-  <Image src={"/skull-flame.gif"} alt="flaming skull" width="50" />
+  <Image
+    src={"/skull-flame.gif"}
+    alt="flaming skull"
+    width="50"
+    loading="eager"
+  />
 </footer>

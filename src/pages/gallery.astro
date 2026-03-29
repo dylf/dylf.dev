@@ -1,0 +1,138 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Image } from "astro:assets";
+const imgs = [
+  {
+    src: "/magico11.gif",
+    alt: "magico11",
+    width: 100,
+    height: 200,
+    loading: "eager",
+  },
+  {
+    src: "/doorway.gif",
+    alt: "doorway",
+    width: 300,
+    height: 200,
+    colSpan: 2,
+    loading: "eager",
+  },
+  {
+    src: "/magico13.gif",
+    alt: "magico13",
+    width: 80,
+    height: 200,
+    loading: "eager",
+  },
+  {
+    src: "/magebattle.gif",
+    alt: "magebattle",
+    width: 2000,
+    height: 200,
+    colSpan: 4,
+    loading: "eager",
+  },
+  {
+    src: "/skullsmoke.gif",
+    alt: "skullsmoke",
+    width: 200,
+    height: 200,
+    loading: "eager",
+  },
+  {
+    src: "/eyes.gif",
+    alt: "eyes",
+    width: 400,
+    height: 200,
+    colSpan: 2,
+    loading: "eager",
+  },
+  {
+    src: "/skullspin.gif",
+    alt: "skullspin",
+    width: 200,
+    height: 200,
+    loading: "eager",
+  },
+  {
+    src: "/altar.gif",
+    alt: "altar",
+    width: 800,
+    height: 200,
+    colSpan: 4,
+    loading: "eager",
+  },
+  {
+    src: "/daemon.gif",
+    alt: "daemon",
+    width: 200,
+    height: 200,
+    loading: "eager",
+  },
+  // {
+  //   src: "/diablo.gif",
+  //   alt: "diablo",
+  //   width: 200,
+  //   height: 200,
+  //   loading: "eager",
+  // },
+  {
+    src: "/symbolic.gif",
+    alt: "symbolic",
+    width: 200,
+    height: 200,
+    loading: "eager",
+  },
+  {
+    src: "/demon.gif",
+    alt: "demon",
+    width: 200,
+    height: 200,
+    loading: "eager",
+  },
+  {
+    src: "/pentagram.gif",
+    alt: "pentagram",
+    width: 200,
+    height: 200,
+    loading: "eager",
+  },
+];
+---
+
+<Layout title="You are Here" description="Gifs" path="/gallery">
+  <h1 class="font-headline mb-4 text-center text-5xl">
+    Why did you come here?
+  </h1>
+  <div
+    class="mx-auto mb-10 grid max-w-5xl grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4"
+  >
+    {
+      imgs.map((img) => (
+        <div
+          style={`grid-column: span ${img.colSpan ?? 1} / span ${img.colSpan ?? 1};`}
+        >
+          <Image
+            class="mx-auto"
+            src={img.src}
+            alt={img.alt}
+            width={img.width}
+            height={img.height}
+          />
+        </div>
+      ))
+    }
+  </div>
+  <span slot="sidebar" class="mx-auto mt-20 max-w-2xl text-center text-xl">
+    I can see you
+    <Image
+      src={"/behold.gif"}
+      alt="beholder"
+      width="200"
+      height="200"
+      loading="eager"
+    />
+    <audio src="/curse-of-ember.mp3" autoplay></audio>
+  </span>
+  <script defer src="/va/script.js"></script>
+</Layout>

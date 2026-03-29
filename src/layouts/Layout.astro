@@ -22,6 +22,8 @@ const path = Astro.props.path;
 const { title, description } = Astro.props;
 const canonicalUrl = `https://www.dylf.dev${Astro.url.pathname}`;
 const pageTitle = `${title} | Dylan Fontaine`;
+const isGallery = path === "/gallery";
+const linkPath = isGallery ? "/" : "/gallery";
 ---
 
 <!doctype html>
@@ -54,14 +56,86 @@ const pageTitle = `${title} | Dylan Fontaine`;
 
     <ClientRouter />
     <SpeedInsights />
+    <script>
+      async function updateLiveStatus() {
+        const liveStatus = document.getElementById("live-status");
+        const liveStatusLink = document.getElementById("live-status-link");
+
+        if (!liveStatus || !liveStatusLink) return;
+
+        try {
+          const response = await fetch("/api/live.json");
+
+          if (!response.ok) return;
+
+          const data = await response.json();
+
+          if (data.live) {
+            liveStatus.classList.add("hidden");
+            liveStatusLink.classList.remove("hidden");
+          }
+        } catch {
+          // Keep default "I am not alive" text when Twitch lookup fails.
+        }
+      }
+
+      updateLiveStatus();
+      document.addEventListener("astro:page-load", updateLiveStatus);
+    </script>
   </head>
   <body class="selection:bg-purple-900">
     <div
       class="container mx-auto max-w-360 grid-cols-1 gap-4 md:grid-cols-[18rem_1fr_150px]"
     >
       <Header currentPath={path} />
-      <aside class="flex-1">
-        <slot name="sidebar" />
+      <aside class="flex h-full flex-col">
+        <div class="flex-1">
+          <slot name="sidebar" />
+          <div class="mt-9 flex w-12 flex-col">
+            <span id="live-status" class="text-lg text-amber-500 lowercase">
+              I may not be on the internet right now</span
+            >
+            <a
+              id="live-status-link"
+              href="https://www.twitch.tv/shallowclone"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hidden animate-pulse text-2xl font-bold text-purple-400 uppercase hover:text-purple-400 hover:underline"
+            >
+              I am alive on Twitch &rarr;
+            </a>
+          </div>
+        </div>
+        <div>
+          <a
+            href={linkPath}
+            class:list={[
+              "flex-end",
+              "justify-end",
+              "hover:text-cyan-300",
+              "text-red-900",
+              "font-light",
+              "hover:underline",
+              "ease-in",
+              "duration-100",
+              "text-lg",
+            ]}
+          >
+            {
+              isGallery ? (
+                <>
+                  <span class="text-xl">&larr;</span>
+                  Please leave
+                </>
+              ) : (
+                <>
+                  Don't go here
+                  <span class="text-xl">&rarr;</span>
+                </>
+              )
+            }
+          </a>
+        </div>
       </aside>
       <main class="flex-1">
         <slot />

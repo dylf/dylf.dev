@@ -1,11 +1,10 @@
 ---
 import Layout from "@/layouts/Linktree.astro";
-import Link from "@/components/Link.astro";
 import { Image } from "astro:assets";
 
 const links = [
   {
-    name: "Website",
+    name: "My Website",
     href: "/",
     bgClass: "bg-cyan-800",
     borderClass: "border-cyan-900",
@@ -14,7 +13,7 @@ const links = [
     target: "_self",
   },
   {
-    name: "Twitch",
+    name: "Watch me live on Twitch",
     href: "https://www.twitch.tv/shallowclone",
     bgClass: "bg-purple-800",
     borderClass: "border-purple-900",
@@ -22,7 +21,7 @@ const links = [
     hoverBgClass: "hover:bg-purple-600",
   },
   {
-    name: "Youtube",
+    name: "I'm on Youtube",
     href: "https://www.youtube.com/@shallowclone",
     bgClass: "bg-red-800",
     borderClass: "border-red-900",
@@ -30,7 +29,7 @@ const links = [
     hoverBgClass: "hover:bg-red-600",
   },
   {
-    name: "TikTok",
+    name: "And also TikTok",
     href: "https://www.tiktok.com/@shallowclone",
     color: "pink",
     bgClass: "bg-olive-800",
@@ -39,29 +38,28 @@ const links = [
     hoverBgClass: "hover:bg-olive-600",
   },
   {
-    name: "Github",
+    name: "My code is on Github",
     href: "https://github.com/dylf",
     bgClass: "bg-teal-800",
     borderClass: "border-teal-900",
     hoverBorderClass: "hover:border-teal-600",
     hoverBgClass: "hover:bg-teal-600",
   },
-  // {
-  //   name: "LinkedIn",
-  //   href: "#",
-  //   color: "blue",
-  //   bgClass: "bg-blue-800",
-  //   borderClass: "border-blue-900",
-  //   hoverBorderClass: "hover:border-blue-600",
-  //   hoverBgClass: "hover:bg-blue-600",
-  // },
   {
-    name: "Twitter",
+    name: "I never use Twitter",
     href: "https://x.com/shallowclone",
     bgClass: "bg-gray-800",
     borderClass: "border-gray-900",
     hoverBorderClass: "hover:border-gray-600",
     hoverBgClass: "hover:bg-gray-600",
+  },
+  {
+    name: "Don't give me money",
+    href: "https://ko-fi.com/shallowclone",
+    bgClass: "bg-taupe-800",
+    borderClass: "border-taupe-900",
+    hoverBorderClass: "hover:border-taupe-600",
+    hoverBgClass: "hover:bg-taupe-600",
   },
 ];
 ---
@@ -100,18 +98,12 @@ const links = [
               link.hoverBgClass,
             ]}
           >
-            <a href={link.href} class="block h-full w-full p-8" target={link.target ?? "_blank"} rel="noopener noreferrer">
+            <a href={link.href} class="block h-full w-full p-16 text-3xl font-bold tracking-widest" target={link.target ?? "_blank"} rel="noopener noreferrer">
               {link.name}
             </a>
           </li>
-        <Image
-          src={"/green-hr.gif"}
-          class="mb-6"
-          alt="divider"
-          width="2000"
-          height="100"
-          loading="eager"
-        />
+          <div class="w-full bg-[url('/chain-rule.gif')] bg-repeat-x h-8 mb-6">
+          </div>
         ))
       }
     </ul>
