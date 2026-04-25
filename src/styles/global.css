@@ -61,6 +61,22 @@ body.linktree {
   margin: 0 auto;
   color: white;
   padding: 10px;
+  grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    "aside main main"
+    "footer footer footer";
+}
+
+@media (width < 48rem) {
+  .container {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
 }
 
 header {
@@ -68,6 +84,7 @@ header {
   background-color: #000000;
   border: var(--border-style);
   text-align: center;
+  grid-area: header;
 }
 
 nav {
@@ -78,13 +95,14 @@ nav {
   background-color: #000000;
   border: var(--border-style);
   padding: 10px;
+  grid-area: nav;
 }
 
 main {
-  grid-column: 2 / -1;
   background-color: #000000;
   border: var(--border-style);
   padding: 1rem;
+  grid-area: main;
 }
 
 aside {
@@ -92,6 +110,7 @@ aside {
   background-color: #000000;
   border: var(--border-style);
   padding: 10px;
+  grid-area: aside;
 }
 
 footer {
@@ -100,4 +119,5 @@ footer {
   background-color: #000000;
   border: var(--border-style);
   padding: 5px;
+  grid-area: footer;
 }
