@@ -1,5 +1,6 @@
 ---
 import Icon from "@/components/Icon.astro";
+import HitCounter from "@/components/HitCounter.astro";
 import { Image } from "astro:assets";
 ---
 
@@ -87,6 +88,8 @@ import { Image } from "astro:assets";
       <a href="https://tailwindcss.com" class="underline hover:text-cyan-400">
         tailwindcss</a
       >
+      <span class="mx-2">|</span>
+      <HitCounter />
     </div>
   </div>
   <Image

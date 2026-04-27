@@ -1,0 +1,59 @@
+---
+---
+
+<div
+  class="hit-counter inline-block font-[family-name:'Orbitron'] text-cyan-400"
+>
+  <span class="counter-value">000000</span> hits
+</div>
+
+<script>
+  class HitCounter {
+    element: HTMLElement;
+    count: number;
+
+    constructor(element: HTMLElement) {
+      this.element = element;
+      this.count = 0;
+      this.init();
+    }
+
+    async init() {
+      await this.increment();
+      await this.fetchCount();
+    }
+
+    async fetchCount() {
+      try {
+        const res = await fetch("/api/hits");
+        const data = await res.json();
+        if (data.hits !== null) {
+          this.count = data.hits;
+          this.updateDisplay();
+        }
+      } catch (e) {
+        console.error("Failed to fetch hits:", e);
+      }
+    }
+
+    async increment() {
+      try {
+        await fetch("/api/hits", { method: "POST" });
+      } catch (e) {
+        console.error("Failed to increment hits:", e);
+      }
+    }
+
+    updateDisplay() {
+      const span = this.element.querySelector(".counter-value");
+      if (span) {
+        const num = this.count || 0;
+        span.textContent = num.toString().padStart(6, "0").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+    }
+  }
+
+  document.querySelectorAll(".hit-counter").forEach((el) => {
+    new HitCounter(el as HTMLElement);
+  });
+</script>
